@@ -1,0 +1,32 @@
+{
+  "name": "keydown-key",
+  "version": "0.0.1",
+  "description": "A utility function to normalize the KeyboardEvent.key especially during IME",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:seawind543/keydown-key.git"
+  },
+  "author": "Mark Lin <marklin1106@gmail.com>",
+  "homepage": "https://github.com/seawind543/keydown-key",
+  "license": "MIT",
+  "keywords": [
+    "KeyboardEvent",
+    "IME",
+    "key normalize",
+    "cross browser",
+    "Mac",
+    "Chrome",
+    "Vanilla JS",
+    "React JS"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
