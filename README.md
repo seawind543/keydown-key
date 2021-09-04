@@ -16,8 +16,8 @@ To handle the different behaviors (with IME) between browsers on different OS.
 
 ### Playground
 
-[Vanilla JS] https://codepen.io/seawind543/pen/gOWNVYR
-[React JS] https://codepen.io/seawind543/pen/xxdvZyE
+- [Vanilla JS] https://codepen.io/seawind543/pen/gOWNVYR
+- [React JS] https://codepen.io/seawind543/pen/xxdvZyE
 
 ## Installation
 
@@ -38,11 +38,11 @@ To handle the different behaviors (with IME) between browsers on different OS.
     const { key } = keyDownKey(KeyboardEvent);
     switch() {
       case 'Enter':
-        // Do what you want for Enter key
+        // Do what you want for real `Enter` key
         break;
 
       case 'Process':
-        // it's keyDown on "Enter" with IME
+        // The keyDown on "Enter" with IME will be here
         break;
 
       default: 
