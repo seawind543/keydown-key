@@ -38,7 +38,7 @@ module.exports = {
       // Process JS with Babel
       {
         test: /\.js?$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|coverage)/,
         use: {
           loader: 'babel-loader',
         },
@@ -53,7 +53,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new ESLintPlugin({
       eslintPath: require.resolve('eslint'),
-      exclude: ['node_modules', 'docs', 'dist', 'lib'],
+      exclude: ['node_modules', 'coverage', 'lib'],
       emitWarning: true,
       cache: false,
     }),
