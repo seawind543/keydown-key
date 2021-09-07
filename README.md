@@ -6,13 +6,18 @@ A utility function to normalize the KeyboardEvent.key especially during IME comp
 
 ## Why need this?
 
-To handle the different behaviors (with IME) between browsers on different OS.
+To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Input_method)) between browsers on different platforms.
 
-- The keyDown.key behavior of Chrome is different on Mac and Windows
-  - Mac: key === `Enter` with IME
-  - Windows: key === `Process` with IME
-- The keyDown.key behavior of Chrome and FireFox are different on Mac
-  - FireFox key === `Process` with IME for both Mac and Windows
+> On the different `platform + browser`, the `keyDownEvent.key` has a different value when `selecting a CJK character` by press the `Enter key` with `IME`.
+
+![[IME keyDown.key issue] Chrome on Mac](https://imgur.com/63EJixc)
+Example: https://imgur.com/63EJixc
+
+- With IME, the keyDown.key value of Chrome is different on Mac and Windows
+  - Mac: key === `Enter`
+  - Windows: key === `Process`
+- With IME, the keyDown.key value of Chrome and FireFox are different on Mac
+  - FireFox key === `Process` on both Mac and Windows
 
 ### Playground
 
@@ -23,7 +28,7 @@ To handle the different behaviors (with IME) between browsers on different OS.
 
 1. Install the latest version of [keydown-key](https://github.com/seawind543/keydown-key):
 
-  ```cmd
+  ```sh
   yarn add keydown-key
   ```
 
@@ -36,7 +41,8 @@ To handle the different behaviors (with IME) between browsers on different OS.
 
   function handleKeyDown(KeyboardEvent) { 
     const { key } = keyDownKey(KeyboardEvent);
-    switch() {
+
+    switch(key) {
       case 'Enter':
         // Do what you want for real `Enter` key
         break;
@@ -51,6 +57,12 @@ To handle the different behaviors (with IME) between browsers on different OS.
 
   inputBox.addEventListener('keydown', handleKeyDown);
   ```
+
+## Reference
+
+[1] IME https://en.wikipedia.org/wiki/Input_method
+
+[2] CJK characters https://en.wikipedia.org/wiki/CJK_characters 
 
 ## License
 
