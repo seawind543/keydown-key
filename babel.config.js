@@ -3,7 +3,7 @@ module.exports = (api) => {
   const plugins = [];
 
   return {
-    presets: ['@babel/preset-env'],
+    presets: ['@babel/preset-env', '@babel/preset-typescript'],
     plugins,
   };
 };

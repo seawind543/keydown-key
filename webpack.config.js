@@ -14,7 +14,7 @@ const banner = [
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'index.js',
@@ -37,11 +37,21 @@ module.exports = {
     rules: [
       // Process JS with Babel
       {
-        test: /\.js?$/,
-        exclude: /(node_modules|coverage)/,
+        test: /\.(js|ts)?$/,
+        exclude: /(node_modules|coverage|lib)/,
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        // For our normal typescript
+        test: /\.ts?$/,
+        exclude: /(node_modules|coverage|lib|\.(test.ts))/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+        ],
       },
     ],
   },
@@ -60,6 +70,7 @@ module.exports = {
     new webpack.BannerPlugin(banner),
   ],
   resolve: {
-    extensions: ['.js'],
+    modules: ['src', 'node_modules'],
+    extensions: ['.js', '.ts'],
   },
 };
