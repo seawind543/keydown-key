@@ -1,3 +1,7 @@
+type NormalizedKeyDownKey = {
+  key: KeyboardEvent['key'];
+};
+
 /**
  * Help function to normalize keyDown event properties
  *
@@ -11,13 +15,14 @@
  * - key: The normalize value of keyDownEvent.key
  *   https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
-function keyDownEventPropsNormalizer(keyDownEvent) {
+function keyDownEventPropsNormalizer(
+  keyDownEvent: KeyboardEvent
+): NormalizedKeyDownKey {
   // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
   const {
-    key,
     keyCode, // Deprecated in Vanilla JS
   } = keyDownEvent;
-  let eventKey = key;
+  let eventKey = keyDownEvent.key;
 
   /**
    * Normalize `key` value for Chrome on Mac
@@ -30,11 +35,11 @@ function keyDownEventPropsNormalizer(keyDownEvent) {
   // Backward compatibility for browser not support keyDownEvent.key, such as safari
   // https://www.w3schools.com/jsref/event_key_key.asp
   // if (eventKey === undefined) {
-  //     eventKey = {
+  //   eventKey = {
   //     8: 'Backspace',
   //     13: 'Enter',
   //     27: 'Escape',
-  //     }[keyDownEvent.keyCode];
+  //   }[keyDownEvent.keyCode];
   // }
 
   return {
