@@ -35,9 +35,9 @@ module.exports = {
   },
   module: {
     rules: [
-      // Process JS with Babel
+      // Process ts with Babel
       {
-        test: /\.(js|ts)?$/,
+        test: /\.ts$/,
         exclude: /(node_modules|coverage|lib)/,
         use: {
           loader: 'babel-loader',
@@ -45,8 +45,8 @@ module.exports = {
       },
       {
         // For our normal typescript
-        test: /\.ts?$/,
-        exclude: /(node_modules|coverage|lib|\.(test.ts))/,
+        test: /\.ts$/,
+        exclude: /(node_modules|coverage|lib)/,
         use: [
           {
             loader: 'ts-loader',
