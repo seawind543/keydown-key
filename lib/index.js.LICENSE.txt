@@ -1,1 +1,1 @@
-/*! keydown-key v1.1.1 | (c) 2022 Mark Lin. | MIT | https://github.com/seawind543/keydown-key */
+/*! keydown-key v1.2.0 | (c) 2022 Mark Lin. | MIT | https://github.com/seawind543/keydown-key */
