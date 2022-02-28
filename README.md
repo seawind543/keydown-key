@@ -8,10 +8,11 @@ A utility function to normalize the KeyboardEvent.key especially during IME comp
 
 To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Input_method)) between browsers on different platforms.
 
-> On the different `platform + browser`, the `keyDownEvent.key` has a different value when `selecting a CJK character` by press the `Enter key` with `IME`.
+> With the different `platform + browser`, the `keyDownEvent.key` has a different value when `selecting a CJK character` by pressing the `Enter key` with `IME`.
 
-![[IME keyDown.key issue] Chrome on Mac](https://imgur.com/63EJixc)
-Example: https://imgur.com/63EJixc
+[IME keyDown.key issue] Chrome on Mac
+
+- Example of the issue: https://imgur.com/63EJixc
 
 - With IME, the keyDown.key value of Chrome is different on Mac and Windows
   - Mac: key === `Enter`
