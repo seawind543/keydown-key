@@ -1,6 +1,6 @@
-type NormalizedKeyDownKey = {
+export interface NormalizedKeyDownKey {
   key: KeyboardEvent['key'];
-};
+}
 
 /**
  * Help function to normalize keyDown event properties
@@ -16,7 +16,7 @@ type NormalizedKeyDownKey = {
  *   https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
 function keyDownEventPropsNormalizer(
-  keyDownEvent: KeyboardEvent
+  keyDownEvent: KeyboardEvent | React.KeyboardEvent
 ): NormalizedKeyDownKey {
   // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
   const {
