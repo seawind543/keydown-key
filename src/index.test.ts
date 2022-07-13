@@ -26,4 +26,16 @@ describe('keyDownEventPropsNormalizer', () => {
       });
     });
   });
+
+  describe('keyCode undefined', () => {
+    const MOCK_KEYDOWN_EVENT: KeyboardEvent = {
+      key: 'Enter',
+    } as KeyboardEvent;
+
+    it('should return key with original value', () => {
+      expect(keyDownEventPropsNormalizer(MOCK_KEYDOWN_EVENT)).toEqual({
+        key: 'Enter',
+      });
+    });
+  });
 });
