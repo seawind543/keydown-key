@@ -19,16 +19,12 @@ function keyDownEventPropsNormalizer(
   keyDownEvent: KeyboardEvent | React.KeyboardEvent
 ): NormalizedKeyDownKey {
   // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-  const {
-    keyCode, // Deprecated in Vanilla JS
-  } = keyDownEvent;
   let eventKey = keyDownEvent.key;
 
-  /**
-   * Normalize `key` value for Chrome on Mac
-   * When `keyCode` is 229, the `key` should be `Process` to align most browsers.
-   */
-  if (keyCode && keyCode === 229) {
+  // Normalize `key` value for Chrome on Mac
+  // When `keyCode` is 229, the `key` should be `Process` to align most browsers.
+  // Note: KeyboardEvent.keyCode Deprecated but we can still get the value
+  if (keyDownEvent.keyCode === 229) {
     eventKey = 'Process';
   }
 
