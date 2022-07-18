@@ -33,15 +33,17 @@ To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Inpu
   yarn add keydown-key
   ```
 
-2. At this point you can import `keydown-key` in your application by:
+2. Apply `keydown-key` in your application
+
+### Example (Vanilla JS)
 
   ```javascript
   import keyDownKey from 'keydown-key';
 
   // ... omit
 
-  function handleKeyDown(KeyboardEvent) { 
-    const { key } = keyDownKey(KeyboardEvent);
+  function handleKeyDown(event: KeyboardEvent) { 
+    const { key } = keyDownKey(event);
 
     switch(key) {
       case 'Enter':
@@ -57,6 +59,37 @@ To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Inpu
   }
 
   inputBox.addEventListener('keydown', handleKeyDown);
+  ```
+
+### Example (React JS)
+
+  ```javascript
+  import React from "react";
+  import keydownKey from "keydown-key";
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    // use the `nativeEvent` attribute to get the browser KeyboardEvent
+    // https://reactjs.org/docs/events.html#overview
+    const { key: theNormalizedKey } = keydownKey(event.nativeEvent);
+
+    switch(key) {
+      case 'Enter':
+        // Do what you want for real `Enter` key
+        break;
+
+      case 'Process':
+        // The keyDown on "Enter" with IME will be here
+        break;
+
+      default: 
+    }
+  };
+
+  const App = () => {
+    return <input onKeyDown={handleKeyDown} />;
+  };
+
+  export default App;
   ```
 
 ## Reference
