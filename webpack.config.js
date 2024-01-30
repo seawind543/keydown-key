@@ -18,6 +18,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'index.js',
+    // Set mount to `this` for SSR https://webpack.js.org/configuration/output/#outputglobalobject
+    globalObject: 'this',
     library: {
       name: {
         root: 'KeyDownKey',
