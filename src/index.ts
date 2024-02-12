@@ -16,7 +16,7 @@ type NormalizedKeyDownKey = {
  *   https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
 function keyDownEventPropsNormalizer(
-  keyDownEvent: KeyboardEvent
+  keyDownEvent: KeyboardEvent,
 ): NormalizedKeyDownKey {
   // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
   let eventKey = keyDownEvent.key;
