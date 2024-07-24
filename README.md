@@ -2,7 +2,7 @@
 
 # keydown-key
 
-A utility function to normalize the KeyboardEvent.key especially during IME composition
+An utility to normalize the KeyboardEvent.key especially during IME composition
 
 ## Why need this?
 
@@ -70,7 +70,7 @@ To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Inpu
   const handleKeyDown = (event: React.KeyboardEvent) => {
     // use the `nativeEvent` attribute to get the browser KeyboardEvent
     // https://reactjs.org/docs/events.html#overview
-    const { key: theNormalizedKey } = keydownKey(event.nativeEvent);
+    const { key } = keydownKey(event.nativeEvent);
 
     switch(key) {
       case 'Enter':

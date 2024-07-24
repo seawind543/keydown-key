@@ -1,7 +1,7 @@
 {
   "name": "keydown-key",
   "version": "1.4.1",
-  "description": "A utility function to normalize the KeyboardEvent.key especially during IME",
+  "description": "An utility to normalize the KeyboardEvent.key especially during IME",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
