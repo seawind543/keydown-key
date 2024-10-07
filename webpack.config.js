@@ -18,6 +18,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'index.js',
+    clean: true, // Clean the output directory before emit.
     // Set mount to `this` for SSR https://webpack.js.org/configuration/output/#outputglobalobject
     globalObject: 'this',
     library: {

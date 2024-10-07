@@ -8,9 +8,8 @@
     "lib"
   ],
   "scripts": {
-    "prepublish": "yarn run eslint && yarn run test && yarn run clean && yarn run build && yarn run clean:post",
+    "prepublish": "yarn run eslint && yarn run test && yarn run build && yarn run clean:post",
     "build": "webpack",
-    "clean": "rm -f lib/*",
     "clean:post": "rm -f lib/*.test.d.ts*",
     "eslint": "eslint --max-warnings 0 --ext .js,.ts src",
     "test": "jest --coverage"
