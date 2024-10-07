@@ -1,6 +1,6 @@
 {
   "name": "keydown-key",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "An utility to normalize the KeyboardEvent.key especially during IME",
   "keywords": [
     "KeyboardEvent",

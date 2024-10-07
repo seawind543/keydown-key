@@ -6,7 +6,7 @@ const pkg = require('./package.json');
 const publicName = pkg.name; // package name
 const banner = [
   `${publicName} v${pkg.version}`,
-  `(c) 2021-${new Date().getFullYear()} Mark Lin.`,
+  `(c) 2021 Mark Lin.`,
   pkg.license,
   pkg.homepage,
 ].join(' | ');
