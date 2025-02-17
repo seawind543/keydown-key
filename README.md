@@ -6,19 +6,24 @@ An utility to normalize the KeyboardEvent.key especially during IME composition
 
 ## Why need this?
 
-To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Input_method)) between browsers on different platforms.
+To address the inconsistent behavior of [IME](https://en.wikipedia.org/wiki/Input_method) across different browsers and platforms:  
 
-> With the different `platform + browser`, the `keyDownEvent.key` has a different value when `selecting a CJK character` by pressing the `Enter key` with `IME`.
+When selecting a [CJK character](https://en.wikipedia.org/wiki/CJK_characters) using the Enter key with IME, the `keyDownEvent.key` value varies depending on the platform and browser combination.  
 
-[IME keyDown.key issue] Chrome on Mac
+### IME `keyDown.key` Issue in Chrome on Mac  
 
-- Example of the issue: https://imgur.com/63EJixc
+**Example:** [Screenshot](https://imgur.com/63EJixc)  
 
-- With IME, the keyDown.key value of Chrome is different on Mac and Windows
-  - Mac: key === `Enter`
-  - Windows: key === `Process`
-- With IME, the keyDown.key value of Chrome and FireFox are different on Mac
-  - FireFox key === `Process` on both Mac and Windows
+#### Differences in `keyDown.key` Values with IME  
+
+- **Chrome:**  
+  - **Mac:** `key === "Enter"`  
+  - **Windows:** `key === "Process"`  
+
+- **Firefox:**  
+  - `key === "Process"` on both **Mac** and **Windows**  
+
+This discrepancy can cause inconsistencies when handling keyboard events in web applications.
 
 ### Playground
 
@@ -96,7 +101,13 @@ To handle the different behaviors (with [IME](https://en.wikipedia.org/wiki/Inpu
 
 [1] IME https://en.wikipedia.org/wiki/Input_method
 
-[2] CJK characters https://en.wikipedia.org/wiki/CJK_characters 
+[2] CJK characters https://en.wikipedia.org/wiki/CJK_characters
+
+[3] add support for SyntheticKeyboardEvent#isComposing https://github.com/facebook/react/issues/13104
+
+[4] Support IME https://github.com/seawind543/react-token-input/issues/1#issuecomment-896190656
+
+[5] Element: keydown event https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event#ignoring_keydown_during_ime_composition
 
 ## License
 
