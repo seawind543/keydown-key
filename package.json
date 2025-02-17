@@ -1,6 +1,6 @@
 {
   "name": "keydown-key",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "An utility to normalize the KeyboardEvent.key especially during IME",
   "keywords": [
     "KeyboardEvent",
@@ -45,7 +45,7 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-webpack-plugin": "^4.2.0",
@@ -54,6 +54,6 @@
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.2",
     "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^6.0.1"
   }
 }
